@@ -65,7 +65,7 @@ while True:
         if mode == "+":
             out = out + typ
         if mode == "-":
-            out = oyt - typ
+            out = out - typ
         if mode == "*":
             out = out * typ
         if mode == "/":

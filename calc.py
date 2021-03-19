@@ -1,17 +1,10 @@
-out = 0
-# 計算結果
-typ = 0
-# 計算用の入力数値
-mode = 0
-# mode選択用
-flag = 0
-# y or n フラグ用
-checkflag = -1
-# inの入力の是非(-1: 初回時のみ)
-his_operand = 0
-# 履歴を1回分保存
-his_num = 0
-# 履歴を1回分保存
+out = 0  # 計算結果
+typ = 0  # 計算用の入力数値
+mode = 0  # mode選択用
+flag = 0  # y or n フラグ用
+checkflag = -1  # inの入力の是非(-1: 初回時のみ)
+his_operand = 0  # 履歴を1回分保存
+his_num = 0  # 履歴を1回分保存
 
 print("Starting calculator...")
 while True:
@@ -51,7 +44,7 @@ while True:
             print("Operation cancelled.")
             continue
 
-    if mode != "+" and "-" and "*" and "/":
+    if mode != "+" and mode != "-" and mode != "*" and mode != "/":
         print("Please select the correct mode.\n\n")
         continue
 
@@ -69,10 +62,7 @@ while True:
     if mode == "*":
         out = out * int(typ)
     if mode == "/":
-        if typ != 0:
-            out = out / int(typ)
-        else:
-            print("Cannot divide by zero.\nOperarion denied.\n")
+        out = out / int(typ)  # 0除算の禁止機能は未実装
 
     print("Result : " + str(out) + "\n\n")
     checkflag = 0

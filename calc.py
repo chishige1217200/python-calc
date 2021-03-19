@@ -51,9 +51,9 @@ while True:
             print("Operation cancelled.")
             continue
 
-    # if mode != "+" & "-" & "*" & "/":
-    #    print("Please select the correct mode.\n\n")
-    #    continue
+    if mode != "+" and "-" and "*" and "/":
+        print("Please select the correct mode.\n\n")
+        continue
 
     if checkflag <= 0:
         print("Please input the number.(int type ONLY)\nNumber? : ")

@@ -16,7 +16,7 @@ his_num = 0
 print("Starting calculator...")
 while True:
     print("Please select the calc mode. (\"+\" or \"-\" or \"*\" or \"/\" or \"0\" or \"c\" or \"h\" or \"q\")\nMode? : ")
-    mode = input(str)
+    mode = input()
     if mode == "q":
         break
     if mode == "0":
@@ -41,7 +41,7 @@ while True:
 
         print("Do you want to calc " + his_operand +
               str(his_num) + " again? (y or N)\n")
-        flag = input(str)
+        flag = input()
         if flag == "y":
             print("Calculated " + his_operand + str(his_num) + " again.\n")
             mode = his_operand
@@ -51,28 +51,28 @@ while True:
             print("Operation cancelled.")
             continue
 
-        if mode != "+" & mode != "-" & mode != "*" & mode != "/":
-            print("Please select the correct mode.\n\n")
-            continue
+    # if mode != "+" & "-" & "*" & "/":
+    #    print("Please select the correct mode.\n\n")
+    #    continue
 
-        if checkflag <= 0:
-            print("Please input the number.(int type ONLY)\nNumber? : ")
-            typ = input(int)
+    if checkflag <= 0:
+        print("Please input the number.(int type ONLY)\nNumber? : ")
+        typ = input()
 
-        his_operand = mode
-        his_num = typ
+    his_operand = mode
+    his_num = typ
 
-        if mode == "+":
-            out = out + typ
-        if mode == "-":
-            out = out - typ
-        if mode == "*":
-            out = out * typ
-        if mode == "/":
-            if typ != 0:
-                out = out / typ
-            else:
-                print("Cannot divide by zero.\nOperarion denied.\n")
+    if mode == "+":
+        out = out + int(typ)
+    if mode == "-":
+        out = out - int(typ)
+    if mode == "*":
+        out = out * int(typ)
+    if mode == "/":
+        if typ != 0:
+            out = out / int(typ)
+        else:
+            print("Cannot divide by zero.\nOperarion denied.\n")
 
     print("Result : " + str(out) + "\n\n")
     checkflag = 0
